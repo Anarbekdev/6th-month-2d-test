@@ -6,18 +6,16 @@ export const Navbar = () => {
   return (
     <div
       style={{
-        position: 'sticky', 
         top: 0,
         zIndex: 1000,
         display: 'flex',
-        justifyContent: 'center', 
-        padding: '10px 20px',
-        background: '#f0f0f0',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        // background: 'red',
+        justifyContent: 'space-around', 
+        padding: '10px 30px',
         width: '100%',
       }}
     >
-      <Menu mode="horizontal" defaultSelectedKeys={['1']} style={{ flex: 1, justifyContent: 'center' }}>
+      <Menu mode="horizontal" defaultSelectedKeys={['1']} style={{width: '100%', display: 'flex',}} >
         <Menu.Item key="1">
           <Link to="/">Pokemons</Link>
         </Menu.Item>
