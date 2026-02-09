@@ -33,7 +33,15 @@ export const PokemonList = () => {
     <>
       <div style={{ maxWidth: "100%", overflowX: "hidden", padding: '10px 30px' }}>
         <List
-          grid={{ gutter: 20, column: 4 }}
+           grid={{
+            gutter: 20,
+            xs: 1,   // телефон
+            sm: 2,   // планшет
+            md: 3,   // маленький ноут
+            lg: 4,   // десктоп
+            xl: 4,
+            xxl: 5,
+          }}
           dataSource={pokemons}
           renderItem={(p) => (
             <List.Item>

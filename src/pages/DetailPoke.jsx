@@ -6,14 +6,14 @@ import { useEffect } from "react";
 export const DetailPoke = () => {
   const { id } = useParams();
   const pokemon = usePokemonStore((p) => p.pokemons.find((p) => p.id === +id));
-  // useEffect(() => {
-  //   const audio = new Audio(pokemon.cries.latest)
-  //   audio.play()
-  // }, [])
+  useEffect(() => {
+    const audio = new Audio(pokemon.cries.latest)
+    audio.play()
+  }, [])
   console.log(pokemon);
 
   if (!pokemon) return <p>data is empty...</p>;
-  console.log(pokemon);
+  // console.log(pokemon);
 
   return (
     <>
