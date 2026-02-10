@@ -2,17 +2,23 @@ import { useParams } from "react-router-dom";
 import { usePokemonStore } from "../store/pokemonStore";
 import { Card } from "antd";
 import { useEffect } from "react";
-import '../components/pokemon.scss'
+import '../styles/pokemon.scss'
+import { getPokemonColor } from "../utils/Backgroundhelper";
 
 export const DetailPoke = () => {
   const { id } = useParams();
-  const pokemon = usePokemonStore((p) => p.pokemons.find((p) => p.id === +id));
+  const {pokemons, getPokemonById} = usePokemonStore();
+  const pokemon = pokemons.find((poke) => poke.id === +id)
   // useEffect(() => {
-  //   const audio = new Audio(pokemon.cries.latest)
+  //   const audio = new Audio(pokemon?.cries?.latest)
   //   audio.play()
   
   // }, [])
+useEffect(() => {
+  getPokemonById(id)
+},[id,pokemon])
 
+const bgColor = getPokemonColor(pokemon)
 
 
   console.log(pokemon);
@@ -31,7 +37,7 @@ export const DetailPoke = () => {
             style={{ maxWidth: 300, width: '100%', margin: '0 auto', display: 'block', objectFit: 'contain' }}
           />
         }
-        style={{maxWidth: 500, margin: '0 auto'}}
+        style={{maxWidth: 500, margin: '0 auto', backgroundColor:bgColor}}
       >
         <p>HP: {pokemon.stats[0].base_stat}</p>
         <p>Attack: {pokemon.stats[1].base_stat}</p>

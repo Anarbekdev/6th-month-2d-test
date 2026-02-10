@@ -1,4 +1,3 @@
-// pages/PokemonList.jsx
 import { List, Spin } from "antd";
 import { useEffect, useRef } from "react";
 import { usePokemonStore } from "../store/pokemonStore";
@@ -35,10 +34,10 @@ export const PokemonList = () => {
         <List
            grid={{
             gutter: 20,
-            xs: 1,   // телефон
-            sm: 2,   // планшет
-            md: 3,   // маленький ноут
-            lg: 4,   // десктоп
+            xs: 1,
+            sm: 2,  
+            md: 3,  
+            lg: 4,  
             xl: 4,
             xxl: 5,
           }}
