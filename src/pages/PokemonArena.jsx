@@ -2,6 +2,7 @@ import { Select, Card, Typography, Button } from 'antd'
 import { useState } from 'react'
 import { useCollectionStore } from '../store/collectionStore'
 import { calcPower } from '../store/calcPower'
+import '../components/pokemon.scss'
 
 const { Title } = Typography
 const { Option } = Select
@@ -89,6 +90,7 @@ export default function PokemonArena() {
             textAlign: 'center',
             borderColor: '#1890ff'
           }}
+          className='card'
           hoverable
         >
           <img
@@ -96,7 +98,7 @@ export default function PokemonArena() {
             alt={winner.name}
             style={{ objectFit: 'contain', maxHeight: 100, marginBottom: 8 }}
           />
-          <Title level={4} style={{ margin: 0 }}>
+          <Title level={4} style={{ margin: 0, color: 'white' }}>
             🏆 Winner: {winner.name}
           </Title>
           <p>⚡ Power: {calcPower(winner)}</p>

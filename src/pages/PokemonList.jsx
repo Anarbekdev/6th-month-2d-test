@@ -31,7 +31,7 @@ export const PokemonList = () => {
 
   return (
     <>
-      <div style={{ maxWidth: "100%", overflowX: "hidden", padding: '10px 30px' }}>
+      <div style={{ maxWidth: "100%", overflowX: "hidden", padding: '10px 30px'}}>
         <List
            grid={{
             gutter: 20,
@@ -42,6 +42,7 @@ export const PokemonList = () => {
             xl: 4,
             xxl: 5,
           }}
+         
           dataSource={pokemons}
           renderItem={(p) => (
             <List.Item>

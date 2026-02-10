@@ -2,23 +2,28 @@ import { useParams } from "react-router-dom";
 import { usePokemonStore } from "../store/pokemonStore";
 import { Card } from "antd";
 import { useEffect } from "react";
+import '../components/pokemon.scss'
 
 export const DetailPoke = () => {
   const { id } = useParams();
   const pokemon = usePokemonStore((p) => p.pokemons.find((p) => p.id === +id));
-  useEffect(() => {
-    const audio = new Audio(pokemon.cries.latest)
-    audio.play()
-  }, [])
+  // useEffect(() => {
+  //   const audio = new Audio(pokemon.cries.latest)
+  //   audio.play()
+  
+  // }, [])
+
+
+
   console.log(pokemon);
 
   if (!pokemon) return <p>data is empty...</p>;
-  // console.log(pokemon);
 
   return (
     <>
       <Card
         title={pokemon.name}
+        className="card"
         cover={
           <img
             src={pokemon.sprites.other.dream_world.front_default}

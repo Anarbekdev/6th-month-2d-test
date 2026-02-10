@@ -17,6 +17,8 @@
     overflow-y: scroll;       
     /* scrollbar-width: none;     */
     -ms-overflow-style: none;    /* IE и Edge */
+
+    background: linear-gradient(to right, #105C7D 0%, #57C785 50%, #EDDD53 100%);
   }
   
   /* Chrome, Safari, Opera */
